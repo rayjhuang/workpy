@@ -1,0 +1,14 @@
+
+## PDO table
+   PDO1 = fix 5V/3A
+   PDO2 = fix 9V/3A
+   PDO3 = pps 11V-3.3V/3A
+
+## mapping table
+   PDP = 33W
+
+## option table
+   OPTION_RP = 2    # 3.0A
+   OPTION_DCP = 1
+#  OPTION_SLPEN = 1 # enable sleep mode
+
