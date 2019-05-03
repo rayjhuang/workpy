@@ -1,7 +1,7 @@
 @echo off
 rem Windows 7 on virtual machine (VirtualBox)
 
-    SET TOTALPHASEPATH=E:\Desktop\project\tools\TotalPhase
+    SET TOTALPHASEPATH=X:\Desktop\project\tools\TotalPhase
 rem SET TOTALPHASEPATH=D:\TotalPhase
 rem SET TOTALPHASEPATH=%CD%\..\..\tools\TotalPhase
 
