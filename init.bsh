@@ -1,0 +1,22 @@
+#!/bin/bash -f
+
+   TOTALPHASEPATH=""
+   PYTHONPATH=""
+   for candi in "~/Desktop/project/tools/TotalPhase" \
+                "/Y/project/tools/TotalPhase"; do
+      if [ -d $candi ]; then
+         TOTALPHASEPATH=$candi
+         echo "$TOTALPHASEPATH found"
+      fi
+   done
+
+   if [ $TOTALPHASEPATH == "" ]; then
+      echo "TOTALPHASE path not found"
+   else
+      case `uname -o` in
+      "Msys") candi=$TOTALPHASEPATH/aardvark-api-windows-x86_64-v5.13/python;;
+      "Mac")  candi=$TOTALPHASEPATH/aardvark-api-macosx-x86_64-v5.13/python;;
+      esac
+      export PYTHONPATH=$candi
+      ls -l $PYTHONPATH
+   fi
