@@ -1,0 +1,38 @@
+#!/bin/bash -f
+
+## Usage:
+## % source writer.bsh /y/project/git/CY2332_R0/Release/cy2332r0.bin
+
+   binfile=$1
+   if [ "$2" == "" ]; then
+      prog=cynpy
+      writer=PYBSH
+   else
+      prog=$2
+      writer=RAPYa
+   fi
+   writer=$writer`date +%y%m%d%H%:::z`
+
+   uname --all
+   echo $0
+   echo $writer
+   echo $binfile
+   echo $prog
+
+   if [ ! "$binfile" == "" ]; then
+      python -m$prog.csp   stop
+      python -m$prog.csp   trim
+      python -m$prog.csp   upload $binfile 1
+      python -m$prog.csp   comp   $binfile \
+			   33=\\90 34=\\09 35=\\40 36=\\E4 37=\\93 38=\\F5 39=\\A2 3A=\\80 3B=\\FE \
+	                   900=CAN1112B-100 \
+			   910=AP43771-14L \
+			   940=\\00 941=\\00 942=\\00 943=\\00 944=\\00
+      python -m$prog.csp   prog_str 1 930 $writer
+
+      ## 3-PDO (5V/3A, 9V/3A, 3.3-11V/3A, 27W)
+      python -m$prog.csp   prog_hex 1 970 2C 91 01 0A  2C D1 02 00  3C 21 DC C0
+      python -m$prog.csp   prog_hex 1 a20       10 FA        51 C2        01 EE  13 E8  C1 F4  11 F4  B2 E4
+
+   fi
+
