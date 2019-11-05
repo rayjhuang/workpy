@@ -4,7 +4,11 @@ REM    > install cynpy
 REM    > python -mcynpy.csp
 REM
 REM 2. work in .\cynpy directory
-REM    > python -B .\cynpy\csp.py
+REM     N.A.
+REM
+REM 3. work with Lib
+REM       ...editing...
+REM    > python C:\Python27\Lib\site-packages\cynpy-0.209-py2.7.egg\cynpy\csp.py
 REM
 REM ============================================
 
