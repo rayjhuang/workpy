@@ -1,6 +1,8 @@
 @echo off
 rem Windows 7
 
+    SET PYPATH=C:\Python27
+
     SET TOTALPHASEPATH=Y:\project\tools\TotalPhase
 rem SET TOTALPHASEPATH=D:\TotalPhase
 rem SET TOTALPHASEPATH=%CD%\..\..\tools\TotalPhase
@@ -16,4 +18,4 @@ rem SET PYTHONPATH=%TOTALPHASEPATH%\aardvark-api-windows-i686-v5.13\python
     dir/w %PYTHONPATH%
 rem dir/w %MYPY%
 
-    @PATH=%CD%;%PATH%
+    @PATH=%CD%;%PYPATH%;%PATH%
