@@ -1,9 +1,9 @@
 @echo off
-rem Windows 7 on virtual machine (VMwareWorkstation15Player)
+rem Windows 7
 
     SET PYPATH=C:\Python27
 
-    SET TOTALPHASEPATH=S:\project\tools\TotalPhase
+    SET TOTALPHASEPATH=X:\project\tools\TotalPhase
 rem SET TOTALPHASEPATH=D:\TotalPhase
 rem SET TOTALPHASEPATH=%CD%\..\..\tools\TotalPhase
 
